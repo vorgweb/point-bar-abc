@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Point Bar · Santo André | Rodízio, Petiscos & Drinks</title>
+    <meta name="description" content="Point Bar em Santo André: rodízio de carnes, petiscos, drinks e música ao vivo. Conheça a história do Chef Jordão!" />
+    <link rel="canonical" href="https://www.pointbarabc.com.br/" />
+    <meta property="og:title" content="Point Bar · Santo André | Rodízio, Petiscos & Drinks" />
+    <meta property="og:description" content="Rodízio de carnes, petiscos, drinks e sobremesas incríveis. Venha conhecer o Point Bar em Santo André!" />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://www.pointbarabc.com.br/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Point Bar",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "R. Santo Urbâno, 115",
+                "addressLocality": "Santo André",
+                "addressRegion": "SP",
+                "postalCode": "09041-090"
+            },
+            "priceRange": "$$",
+            "servesCuisine": "Rodízio, Petiscos, Drinks",
+            "openingHours": "Mo-Sa 11:30-22:30, Su 11:30-17:00"
+        }
+    </script>
+    <style>
+        /* ===== RESET & VARIÁVEIS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --black: #0A0A0A;
+            --dark: #121212;
+            --gold: #D4AF37;
+            --gold-light: #e8c84a;
+            --white: #FFFFFF;
+            --red: #E63946;
+            --gray: #1e1e1e;
+            --text-gray: #b0b0b0;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.9);
+            --radius: 28px;
+            --radius-sm: 18px;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover {
+            color: var(--gold-light);
+        }
+        .gold {
+            color: var(--gold);
+        }
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .section:last-of-type {
+            border-bottom: none;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+        }
+        h2 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 1.8rem;
+            text-align: center;
+        }
+        h2 .gold {
+            display: inline-block;
+            position: relative;
+        }
+        h2 .gold::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 4px;
+            opacity: 0.5;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 640px;
+            margin: -0.8rem auto 2.5rem auto;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== BOTÕES ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 28px rgba(230, 57, 70, 0.35);
+            letter-spacing: 0.5px;
+        }
+        .btn:hover {
+            background: #d42f3d;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(230, 57, 70, 0.5);
+            color: white;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        .btn-instagram {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 8px 28px rgba(225, 48, 108, 0.35);
+            border: none;
+        }
+        .btn-instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(225, 48, 108, 0.5);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, var(--black) 0%, #0d0d0d 50%, var(--dark) 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 3rem 0 5rem 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(230, 57, 70, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 820px;
+        }
+        .hero .hero-image {
+            width: 100%;
+            height: 340px;
+            border-radius: var(--radius);
+            margin: 0 auto 2.5rem auto;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 600;
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+        }
+        .hero h1 .gold {
+            display: inline-block;
+            position: relative;
+        }
+        .hero h1 .gold::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 4px;
+            opacity: 0.4;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 580px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.8;
+            letter-spacing: 0.2px;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+
+        /* ===== DIFERENCIAIS ===== */
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        .diferenciais-grid div {
+            background: var(--dark);
+            padding: 2rem 1.2rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .diferenciais-grid div:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        .diferenciais-grid span {
+            font-size: 2.6rem;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+        .diferenciais-grid h4 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 0.2rem;
+        }
+        .diferenciais-grid p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===== RODÍZIO ===== */
+        .rodizio-box {
+            background: var(--dark);
+            padding: 3rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow);
+        }
+        .rodizio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .rodizio-item {
+            background: var(--black);
+            padding: 2rem 1.5rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        .rodizio-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        }
+        .rodizio-item h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        .rodizio-item p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        .rodizio-item .preco {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            display: block;
+            margin-top: 0.4rem;
+        }
+        .rodizio-item.destaque {
+            border-left-color: var(--red);
+            background: #1a0a0a;
+        }
+        .rodizio-item.destaque h4 {
+            color: var(--red);
+        }
+        .rodizio-item.destaque .preco {
+            color: var(--red);
+        }
+        .rodizio-item .tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-top: 0.3rem;
+            display: block;
+        }
+        .rodizio-info {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== CARDÁPIO ===== */
+        .menu-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .menu-categories button {
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-gray);
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        .menu-categories button:hover {
+            border-color: var(--gold);
+            color: var(--white);
+        }
+        .menu-categories button.active {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .menu-card {
+            background: var(--dark);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .menu-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .menu-card .img-placeholder {
+            width: 100%;
+            height: 170px;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            letter-spacing: 0.5px;
+        }
+        .menu-card .info {
+            padding: 1.5rem 1.5rem 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--white);
+        }
+        .menu-card .desc {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            flex: 1;
+        }
+        .menu-card .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin: 0.5rem 0 0.8rem 0;
+        }
+        .menu-card .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        /* ===== SOBREMESA DESTAQUE ===== */
+        .sobremesa-destaque {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1212 100%);
+            padding: 3rem 2.5rem;
+            border-radius: var(--radius);
+            border: 2px solid var(--gold);
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        .sobremesa-destaque h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+        .sobremesa-destaque p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .sobremesa-destaque .preco-destaque {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: 0.8rem;
+            display: block;
+        }
+
+        /* ===== EVENTOS ===== */
+        .eventos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .evento-item {
+            background: var(--dark);
+            padding: 2.2rem 1.5rem;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        .evento-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        .evento-item h4 {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+        .evento-item p {
+            color: var(--text-gray);
+        }
+
+        /* ===== AVALIAÇÕES ===== */
+        .avaliacao-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .avaliacao-header .nota {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .avaliacao-header .stars {
+            font-size: 1.8rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+        }
+        .avaliacao-header .label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        .carousel {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 0.5rem 0.2rem 1.5rem 0.2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .carousel::-webkit-scrollbar {
+            height: 4px;
+        }
+        .carousel::-webkit-scrollbar-track {
+            background: var(--dark);
+            border-radius: 4px;
+        }
+        .carousel::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        .carousel-item {
+            flex: 0 0 300px;
+            background: var(--dark);
+            padding: 2rem;
+            border-radius: var(--radius-sm);
+            scroll-snap-align: start;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        .carousel-item .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+        .carousel-item p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+        .carousel-item .autor {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* ===== GALERIA ===== */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+        .galeria-grid div {
+            aspect-ratio: 1/1;
+            background: var(--gray);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 500;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .galeria-grid div:hover {
+            border-color: var(--gold);
+            transform: scale(1.03);
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== SOBRE ===== */
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .sobre-texto {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+        }
+        .sobre-texto p {
+            margin-bottom: 1.2rem;
+        }
+        .sobre-texto strong {
+            color: var(--white);
+        }
+        .sobre-texto .frase {
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.2rem;
+            border-left: 3px solid var(--gold);
+            padding-left: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .sobre-imagem {
+            width: 100%;
+            height: 320px;
+            background: var(--gray);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 500;
+            border: 2px dashed rgba(212, 175, 55, 0.25);
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== LOCAL ===== */
+        .local-box {
+            background: var(--dark);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow);
+        }
+        .local-box p {
+            font-size: 1.05rem;
+        }
+        .local-box .endereco {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+        .local-box .horario {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+        .mapa-placeholder {
+            width: 100%;
+            height: 220px;
+            background: var(--gray);
+            border-radius: var(--radius-sm);
+            margin: 1.2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .mapa-placeholder a {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background: var(--dark);
+            padding: 4rem 0 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 2.5rem;
+        }
+        .footer-grid h4 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer-grid p {
+            color: var(--text-gray);
+        }
+        .footer-grid a {
+            display: block;
+            color: var(--text-gray);
+            margin: 0.4rem 0;
+            transition: var(--transition);
+        }
+        .footer-grid a:hover {
+            color: var(--gold);
+            transform: translateX(4px);
+        }
+        .footer-bottom {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            z-index: 999;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            font-size: 2rem;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #1da851;
+        }
+
+        /* ===== PROMO BANNER ===== */
+        .promo-banner {
+            background: linear-gradient(90deg, var(--red) 0%, #c92f3d 100%);
+            color: white;
+            text-align: center;
+            padding: 0.8rem 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
+        }
+        .promo-banner span {
+            color: var(--gold);
+        }
+
+        /* ===== CTA FIXO MOBILE ===== */
+        .cta-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 998;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: space-around;
+            padding: 0.7rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            gap: 0.8rem;
+        }
+        .cta-fixed a {
+            flex: 1;
+            text-align: center;
+            padding: 0.7rem 0.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            letter-spacing: 0.3px;
+        }
+        .cta-fixed .cta-reservar {
+            background: var(--red);
+            color: white;
+        }
+        .cta-fixed .cta-cardapio {
+            background: var(--gold);
+            color: var(--black);
+        }
+        .cta-fixed .cta-local {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 992px) {
+            .sobre-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .sobre-imagem {
+                height: 240px;
+            }
+            .hero .hero-image {
+                height: 240px;
+            }
+        }
+        @media (max-width: 768px) {
+            .cta-fixed {
+                display: flex;
+            }
+            .hero {
+                min-height: 90vh;
+                padding-bottom: 90px;
+            }
+            .container {
+                padding: 0 1.2rem;
+            }
+            .section {
+                padding: 3.5rem 0;
+            }
+            .rodizio-box {
+                padding: 1.8rem;
+            }
+            .rodizio-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            .sobremesa-destaque {
+                padding: 2rem 1.5rem;
+            }
+            .sobremesa-destaque h3 {
+                font-size: 1.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .rodizio-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .diferenciais-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .carousel-item {
+                flex: 0 0 260px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .cta-fixed a {
+                font-size: 0.7rem;
+                padding: 0.6rem 0.2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-grid a {
+                display: inline-block;
+                margin: 0.2rem 0.8rem;
+            }
+            .avaliacao-header .nota {
+                font-size: 2.2rem;
+            }
+            .avaliacao-header .stars {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PROMO BANNER ===== -->
+    <div class="promo-banner">
+        🥩 <span>Festival de Carnes</span> · Rodízio todos os dias! Consulte horários e valores
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-image">
+                SUA IMAGEM AQUI · FOTO DO AMBIENTE
+            </div>
+            <h1>Seu próximo <span class="gold">happy hour</span> começa aqui.</h1>
+            <p>Rodízio de carnes, petiscos, drinks e sobremesas incríveis em Santo André. Um espaço feito para você e seus amigos.</p>
+            <div class="hero-buttons">
+                <a href="#cardapio" class="btn">Ver Cardápio</a>
+                <a href="https://www.instagram.com/pointbarabc/" target="_blank" class="btn btn-instagram">@pointbarabc</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="section" id="diferenciais">
+        <div class="container">
+            <h2>Por que o <span class="gold">Point Bar</span>?</h2>
+            <p class="section-subtitle">Cinco motivos para você escolher o Point Bar para seu próximo rolê</p>
+            <div class="diferenciais-grid">
+                <div><span>🥩</span><h4>Rodízio de Carnes</h4><p>todos os dias</p></div>
+                <div><span>🍔</span><h4>Petiscos</h4><p>e porções especiais</p></div>
+                <div><span>🍹</span><h4>Drinks</h4><p>assim do Chef</p></div>
+                <div><span>🎸</span><h4>Música ao vivo</h4><p>finais de semana</p></div>
+                <div><span>📍</span><h4>Santo André</h4><p>localização central</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODÍZIO ===== -->
+    <section class="section" id="rodizio">
+        <div class="container">
+            <h2>🥩 <span class="gold">Festival de Carnes</span></h2>
+            <p class="section-subtitle">Rodízio todos os dias · Servido até 1h após o fechamento</p>
+
+            <div class="rodizio-box">
+                <div class="rodizio-grid">
+                    <div class="rodizio-item">
+                        <h4>Seg–Sex (Almoço)</h4>
+                        <p>11:30–15:00</p>
+                        <span class="preco">R$ 59,99</span>
+                    </div>
+                    <div class="rodizio-item">
+                        <h4>Seg–Sex (Jantar)</h4>
+                        <p>18:00–22:45</p>
+                        <span class="preco">R$ 79,99</span>
+                    </div>
+                    <div class="rodizio-item destaque">
+                        <h4>🔥 Sábado</h4>
+                        <p>11:30–22:30</p>
+                        <span class="preco">R$ 89,99</span>
+                        <span class="tag">⭐ Fim de semana</span>
+                    </div>
+                    <div class="rodizio-item destaque">
+                        <h4>🔥 Domingo</h4>
+                        <p>11:30–17:00</p>
+                        <span class="preco">R$ 89,99</span>
+                        <span class="tag">⭐ Fim de semana</span>
+                    </div>
+                </div>
+                <p class="rodizio-info">*Servido até 1h após o horário de fechamento</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CARDÁPIO ===== -->
+    <section class="section" id="cardapio">
+        <div class="container">
+            <h2>Nosso <span class="gold">Cardápio</span></h2>
+            <p class="section-subtitle">Escolha sua categoria e descubra nossas delícias</p>
+
+            <div class="menu-categories" id="menuFilter">
+                <button class="active" data-cat="todos">Todos</button>
+                <button data-cat="petiscos">Petiscos</button>
+                <button data-cat="bebidas">Bebidas</button>
+                <button data-cat="cervejas">Cervejas</button>
+                <button data-cat="drinks">Drinks</button>
+                <button data-cat="sobremesas">Sobremesas</button>
+                <button data-cat="combos">Combos</button>
+            </div>
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== SOBREMESA DESTAQUE ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="sobremesa-destaque">
+                <h3>🍫 Grand Petit Gâteau com Nutella</h3>
+                <p>Petit Gâteau, Brownie, sorvete de baunilha, BIS, Ferrero Rocher, Oreo, Kit Kat, morango e Ganache de Nutella.</p>
+                <span class="preco-destaque">Serve 3 a 4 pessoas · R$ 119,99</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EVENTOS ===== -->
+    <section class="section" id="eventos">
+        <div class="container">
+            <h2>🎵 <span class="gold">Programação</span></h2>
+            <p class="section-subtitle">Tem sempre algo especial acontecendo no Point Bar</p>
+            <div class="eventos-grid">
+                <div class="evento-item"><h4>🎸 Música ao vivo</h4><p>Finais de semana</p></div>
+                <div class="evento-item"><h4>🍹 Double Drinks</h4><p>Promoções especiais</p></div>
+                <div class="evento-item"><h4>🥩 Festival de Carnes</h4><p>Rodízio todos os dias</p></div>
+                <div class="evento-item"><h4>🍰 Sobremesas</h4><p>Grand Petit Gâteau</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AVALIAÇÕES ===== -->
+    <section class="section" id="avaliacoes">
+        <div class="container">
+            <h2>O que dizem <span class="gold">no Google</span></h2>
+
+            <div class="avaliacao-header">
+                <span class="nota">4.4</span>
+                <span class="stars">★★★★★</span>
+                <span class="label">Avaliações reais do Google</span>
+            </div>
+
+            <div class="carousel">
+                <div class="carousel-item">
+                    <span class="stars">★★★★★</span>
+                    <p>"Ambiente muito bom, música ao vivo excelente! Comida maravilhosa."</p>
+                    <span class="autor">– Cliente Google</span>
+                </div>
+                <div class="carousel-item">
+                    <span class="stars">★★★★★</span>
+                    <p>"Rodízio de carnes maravilhoso, atendimento top. Volto sempre!"</p>
+                    <span class="autor">– Cliente Google</span>
+                </div>
+                <div class="carousel-item">
+                    <span class="stars">★★★★★</span>
+                    <p>"Melhor happy hour de Santo André. Recomendo para todos os amigos!"</p>
+                    <span class="autor">– Cliente Google</span>
+                </div>
+                <div class="carousel-item">
+                    <span class="stars">★★★★★</span>
+                    <p>"Drinks deliciosos e ambiente bem descontraído. Perfeito para grupos."</p>
+                    <span class="autor">– Cliente Google</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIA ===== -->
+    <section class="section" id="galeria">
+        <div class="container">
+            <h2>📸 <span class="gold">Galeria</span></h2>
+            <p class="section-subtitle">Veja um pouco do que você encontra no Point Bar</p>
+            <div class="galeria-grid">
+                <div>SUA IMAGEM<br>AMBIENTE</div>
+                <div>SUA IMAGEM<br>PRATOS</div>
+                <div>SUA IMAGEM<br>DRINKS</div>
+                <div>SUA IMAGEM<br>MÚSICA</div>
+                <div>SUA IMAGEM<br>SOBREMESAS</div>
+                <div>SUA IMAGEM<br>EVENTOS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="section" id="sobre">
+        <div class="container">
+            <h2>Nossa <span class="gold">História</span></h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p><strong>Luís Fernando Mendes</strong>, casado e pai de dois filhos, é um amante da gastronomia. Sua jornada começou em 2014 na garagem de seu avô com apenas <strong>R$ 500,00</strong> e uma ideia simples: vender batatas fritas em potes.</p>
+                    <p>Em 2016, ampliou seu cardápio com lanches e porções diferenciadas. Em 2017, deu um salto ao mudar-se para um local maior em Santo André, inaugurando sua primeira loja.</p>
+                    <p>Em 2021, abriu sua segunda unidade na Mooca e introduziu o famoso <strong>aligot</strong> para acompanhar sua picanha. Hoje, são <strong>10 lojas</strong> e uma história de superação.</p>
+                    <div class="frase">"Nunca foi sorte, sempre foi Deus!"</div>
+                </div>
+                <div class="sobre-imagem">
+                    SUA IMAGEM AQUI<br>FOTO DO CHEF JORDÃO
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCALIZAÇÃO ===== -->
+    <section class="section" id="localizacao">
+        <div class="container">
+            <h2>📍 <span class="gold">Venha nos visitar</span></h2>
+            <div class="local-box">
+                <p class="endereco"><strong>R. Santo Urbâno, 115 - Jardim Bela Vista</strong></p>
+                <p class="endereco" style="font-size:1rem; color:var(--text-gray);">Santo André - SP, 09041-090</p>
+                <p class="horario">🕒 Seg–Sáb: 11:30–22:30 · Dom: 11:30–17:00</p>
+
+                <div class="mapa-placeholder">
+                    <a href="https://maps.app.goo.gl/tYdwZ2XKnq6sUrGB8" target="_blank">📌 Abrir no Google Maps</a>
+                </div>
+
+                <a href="https://maps.app.goo.gl/tYdwZ2XKnq6sUrGB8" target="_blank" class="btn btn-outline" style="margin-top:0.5rem;">Como chegar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Point Bar</h4>
+                    <p>Santo André - SP</p>
+                    <p style="color:#666; font-size:0.85rem; margin-top:0.3rem;">@pointbarabc</p>
+                </div>
+                <div>
+                    <h4>Navegação</h4>
+                    <a href="#home">Início</a>
+                    <a href="#cardapio">Cardápio</a>
+                    <a href="#eventos">Eventos</a>
+                    <a href="#localizacao">Local</a>
+                </div>
+                <div>
+                    <h4>Redes</h4>
+                    <a href="https://www.instagram.com/pointbarabc/" target="_blank">Instagram</a>
+                    <a href="https://maps.app.goo.gl/tYdwZ2XKnq6sUrGB8" target="_blank">Google Maps</a>
+                    <a href="#rodizio">Rodízio</a>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <p style="color:#666;">Atendimento no local</p>
+                    <p style="color:#666; font-size:0.85rem;">📱 (11) 9XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Point Bar · Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOAT (DESATIVADO) ===== -->
+    <a href="#" class="whatsapp-float" aria-label="WhatsApp" style="display:none;">💬</a>
+
+    <!-- ===== CTA FIXO MOBILE ===== -->
+    <div class="cta-fixed">
+        <a href="https://www.instagram.com/pointbarabc/" target="_blank" class="cta-reservar">📱 Instagram</a>
+        <a href="#cardapio" class="cta-cardapio">🍔 Cardápio</a>
+        <a href="#localizacao" class="cta-local">📍 Como chegar</a>
+    </div>
+
+    <script>
+        (function() {
+            // ===== CARDÁPIO =====
+            const menuItems = [{
+                id: 1,
+                nome: "Suco Natural (água)",
+                desc: "Maracujá, Melancia, Limão, Morango, Abacaxi",
+                preco: "R$ 13,99",
+                cat: "bebidas"
+            }, {
+                id: 2,
+                nome: "Suco Natural (leite)",
+                desc: "Morango ou Maracujá",
+                preco: "R$ 15,99",
+                cat: "bebidas"
+            }, {
+                id: 3,
+                nome: "Coca-Cola",
+                desc: "Lata 350ml",
+                preco: "R$ 13,99",
+                cat: "bebidas"
+            }, {
+                id: 4,
+                nome: "Guaraná Antártica",
+                desc: "Lata 350ml",
+                preco: "R$ 13,99",
+                cat: "bebidas"
+            }, {
+                id: 5,
+                nome: "Água Mamba",
+                desc: "Com ou sem gás",
+                preco: "R$ 10,99",
+                cat: "bebidas"
+            }, {
+                id: 6,
+                nome: "Red Bull",
+                desc: "Original, Melancia ou Tropical",
+                preco: "R$ 15,90",
+                cat: "bebidas"
+            }, {
+                id: 7,
+                nome: "Heineken Long Neck",
+                desc: "Garrafa 330ml",
+                preco: "R$ 15,99",
+                cat: "cervejas"
+            }, {
+                id: 8,
+                nome: "Amstel Long Neck",
+                desc: "Garrafa 330ml",
+                preco: "R$ 14,99",
+                cat: "cervejas"
+            }, {
+                id: 9,
+                nome: "Sol Long Neck",
+                desc: "Garrafa 330ml",
+                preco: "R$ 14,99",
+                cat: "cervejas"
+            }, {
+                id: 10,
+                nome: "Heineken 600ml",
+                desc: "Garrafa",
+                preco: "R$ 24,99",
+                cat: "cervejas"
+            }, {
+                id: 11,
+                nome: "Amstel 600ml",
+                desc: "Garrafa",
+                preco: "R$ 21,99",
+                cat: "cervejas"
+            }, {
+                id: 12,
+                nome: "Baden Baden",
+                desc: "Lager ou IPA",
+                preco: "R$ 28,99",
+                cat: "cervejas"
+            }, {
+                id: 13,
+                nome: "Caipirinha",
+                desc: "Cachaça Cabaré",
+                preco: "R$ 29,99",
+                cat: "drinks"
+            }, {
+                id: 14,
+                nome: "Caipirinha",
+                desc: "Vodka Smirnoff",
+                preco: "R$ 33,99",
+                cat: "drinks"
+            }, {
+                id: 15,
+                nome: "Piña Colada",
+                desc: "Drink tradicional",
+                preco: "R$ 39,99",
+                cat: "drinks"
+            }, {
+                id: 16,
+                nome: "Moscow Mule",
+                desc: "Vodka, gengibre, limão",
+                preco: "R$ 39,99",
+                cat: "drinks"
+            }, {
+                id: 17,
+                nome: "Gin Tonic",
+                desc: "Gin, água tônica, limão",
+                preco: "R$ 42,99",
+                cat: "drinks"
+            }, {
+                id: 18,
+                nome: "Gin Jordão",
+                desc: "Gin, frutas vermelhas, energético",
+                preco: "R$ 42,99",
+                cat: "drinks"
+            }, {
+                id: 19,
+                nome: "Petit Gâteau com Nutella",
+                desc: "Chantilly, morango, sorvete de baunilha",
+                preco: "R$ 36,99",
+                cat: "sobremesas"
+            }, {
+                id: 20,
+                nome: "Gâteau do Chef Jordão",
+                desc: "Petit Gâteau, Brownie, sorvete, Bis, Oreo",
+                preco: "R$ 69,99",
+                cat: "sobremesas"
+            }, {
+                id: 21,
+                nome: "Taça Ferrero Rocher",
+                desc: "Creme de avelã, morangos, sorvete, Kit-Kat",
+                preco: "R$ 49,99",
+                cat: "sobremesas"
+            }, {
+                id: 22,
+                nome: "Taça Especial Chef Jordão",
+                desc: "Sorvete, chantilly, Bis, Kit-Kat, Ferrero",
+                preco: "R$ 59,99",
+                cat: "sobremesas"
+            }, {
+                id: 23,
+                nome: "Balde Heineken",
+                desc: "3 garrafas de 600ml",
+                preco: "R$ 71,99",
+                cat: "combos"
+            }, {
+                id: 24,
+                nome: "Balde Long Neck",
+                desc: "6 Heineken",
+                preco: "R$ 79,99",
+                cat: "combos"
+            }, {
+                id: 25,
+                nome: "Combo Absolut + 4 Red Bulls",
+                desc: "Garrafa + energéticos",
+                preco: "R$ 299,99",
+                cat: "combos"
+            }, {
+                id: 26,
+                nome: "Combo Smirnoff + 4 Red Bulls",
+                desc: "Garrafa + energéticos",
+                preco: "R$ 214,99",
+                cat: "combos"
+            }, {
+                id: 27,
+                nome: "Combo Jack Daniel's + 4 Red Bulls",
+                desc: "Garrafa + energéticos",
+                preco: "R$ 399,99",
+                cat: "combos"
+            }, {
+                id: 28,
+                nome: "Porção de Batata Frita",
+                desc: "Batata rústica com cheddar e bacon",
+                preco: "R$ 24,90",
+                cat: "petiscos"
+            }, {
+                id: 29,
+                nome: "Porção de Calabresa",
+                desc: "Calabresa acebolada",
+                preco: "R$ 29,90",
+                cat: "petiscos"
+            }, ];
+
+            const grid = document.getElementById('menuGrid');
+            const filterBtns = document.querySelectorAll('#menuFilter button');
+
+            function renderMenu(category = 'todos') {
+                const filtered = category === 'todos' ? menuItems : menuItems.filter(i => i.cat === category);
+                if (filtered.length === 0) {
+                    grid.innerHTML =
+                        '<p style="text-align:center; color:var(--text-gray); grid-column:1/-1; padding:2rem 0;">Nenhum item encontrado</p>';
+                    return;
+                }
+                grid.innerHTML = filtered.map(item => `
+                            <div class="menu-card">
+                                <div class="img-placeholder">
+                                    SUA IMAGEM · ${item.nome}
+                                </div>
+                                <div class="info">
+                                    <h4>${item.nome}</h4>
+                                    <p class="desc">${item.desc}</p>
+                                    <span class="price">${item.preco}</span>
+                                    <a href="https://www.instagram.com/pointbarabc/" target="_blank" class="btn" style="background:linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">Pedir pelo Instagram</a>
+                                </div>
+                            </div>
+                        `).join('');
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    renderMenu(this.dataset.cat);
+                });
+            });
+
+            renderMenu('todos');
+
+            // ===== SCROLL REVEAL =====
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(s => {
+                s.style.opacity = '0';
+                s.style.transform = 'translateY(40px)';
+                s.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+                observer.observe(s);
+            });
+
+            setTimeout(() => {
+                sections.forEach(s => {
+                    s.style.opacity = '1';
+                    s.style.transform = 'translateY(0)';
+                });
+            }, 300);
+
+        })();
+    </script>
+</body>
+</html>
